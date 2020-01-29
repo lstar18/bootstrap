@@ -120,8 +120,54 @@ const printToDom = (divId, textToPrint) => {
     printToDom('duck-cards', domString);
     };
 
+const choseColor = (e) => {
+    const buttonId = e.target.id;
+    const selectedDucks = [];
+    for( let i= 0; i < ducks.length; i++) {
+        if (ducks[i].color === buttonId) {
+        selectedDucks.push(ducks[i]);
+        }
+    }
+   duckCards(selectedDucks);
+};
+
+
+const choseGender = (e) => {
+    const buttonId = e.target.id;
+    const selectedDucks = [];
+    for( let i= 0; i < ducks.length; i++) {
+        if (ducks[i].gender === buttonId) {
+        selectedDucks.push(ducks[i]);
+        }
+    }
+   duckCards(selectedDucks);
+};
+
+
+const choseRubber = () => {
+   
+    const selectedDucks = [];
+    for( let i= 0; i < ducks.length; i++) {
+        if (ducks[i].isRubber) {
+        selectedDucks.push(ducks[i]);
+        }
+    }
+   duckCards(selectedDucks);
+};
+
+
+const events = () => {
+    document.getElementById('blue').addEventListener('click', choseColor);
+    document.getElementById('pink').addEventListener('click', choseColor);
+    document.getElementById('gold').addEventListener('click', choseColor);
+    document.getElementById('female').addEventListener('click', choseGender);
+    document.getElementById('male').addEventListener('click', choseGender);
+    document.getElementById('rubber').addEventListener('click', choseRubber);
+
+};
     const init = () => {
         duckCards(ducks);
+        events();
     }
 
-    init ();
+init ();
