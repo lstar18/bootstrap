@@ -1,7 +1,7 @@
 console.log('Bootstrap');
 
 const ducks = [
-{   color: 'blue',
+{   color: 'blue', 
     isRubber: true,
     gender: 'female',
     isMirgator: false,
@@ -74,7 +74,7 @@ const ducks = [
 },
 
 {   color: 'blue',
-    isRubber: true,
+    isRubber: false,
     gender: 'male',
     isMirgator: false,
     socialStatus: 'married',
